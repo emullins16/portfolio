@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me | Evan Mullins</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeIn 0.6s ease forwards;
+    }
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-gray-200 font-sans">
+
+<nav class="bg-gradient-to-l from-slate-900 via-indigo-950 to-violet-950 shadow-sm sticky top-0 z-10 fade-in">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="font-semibold text-lg">
+      <a href="../../index.html" class="inline-block transition-transform duration-200 hover:scale-105 hover:text-indigo-400">
+        Portfolio Image
+      </a>
+    </h1>
+
+    <div class="space-x-6 text-sm">
+      <a href="../../index.html"
+        class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
+        Home
+      </a>
+      <a href="../../pages/about/about.html"
+        class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
+        About Me
+      </a>
+      <a href="projects.html"
+        class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
+        Projects
+      </a>
+      <a href="../../pages/resume/resume.html"
+        class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
+        Resume
+      </a>  
+      <a href="../../pages/contact/contact.html"
+        class="inline-block hover:text-violet-400 transition-transform duration-200 hover:scale-105">
+        Contact
+      </a>
+    </div>
+  </div>
+</nav>
+
+<section class="max-w-5xl mx-auto px-6 py-20">
+
+  <h2 class="text-4xl font-bold mb-6 fade-in">
+    Projects
+  </h2>
+
+  <div class="h-px w-20 bg-violet-700/40 mb-10 fade-in" style="animation-delay: 0.1s;"></div>
+
+  <p class="text-gray-300 max-w-3xl leading-relaxed fade-in" style="animation-delay: 0.2s;">
+    This page is under construction — soon it will include my projects and the work I’ve done in engineering, global development, and more.
+  </p>
+
+</section>
+
+<div class="flex items-center justify-center flex-col md:flex-row gap-10 fade-in" style="animation-delay: 0.3s;">
+  <a href="engineering/engineering.html" 
+     class="w-80 slide-bg bg-gradient-to-r from-[#69809e] to-indigo-900 text-white px-12 py-8 rounded-lg shadow-lg text-center">
+    <h2 class="text-2xl font-semibold mb-2">Engineering Projects</h2>
+  </a>
+  <a href="global/global.html" 
+     class="w-80 slide-bg bg-gradient-to-r from-emerald-300 to-emerald-700 text-white px-12 py-8 rounded-lg shadow-lg text-center">
+    <h2 class="text-2xl font-semibold mb-2">Global Experiences</h2>
+  </a>
+</div>
+
+
+<footer class="max-w-5xl mx-auto px-6 py-12 text-sm text-gray-500">
+  <p>@ 2026 Evan Mullins</p>
+</footer>
+
+</body>
+</html>
