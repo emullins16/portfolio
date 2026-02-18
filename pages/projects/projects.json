@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Flux Cup (Sophomore Lab Redesign)",
+    "date": "2026-02-01",
+    "dateDisplay": "February 2026",
+    "category": "engineering",
+    "image": "../../assets/engassets/cup/spill.png",
+    "imagePosition": "28% 40%",
+    "description": "Reimagined disposable polymer cup, improving usability and sustainability.",
+    "link": "engineering/flux.html"
+  },
+  {
+    "title": "Jazz in Germany",
+    "date": "2025-03-01",
+    "dateDisplay": "March 2025",
+    "category": "global",
+    "image": "../../assets/globalassets/berlin/b1.jpg",
+    "imagePosition": "28% 40%",
+    "description": "Privileged to perform again overseas in Germany and Austria.",
+    "link": "global/berlin.html"
+  }
+]

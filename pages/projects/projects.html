@@ -1,3 +1,5 @@
+<!-- To run, CD dir then python -m http.server 8000, then http://localhost:8000/pages/projects/projects.html-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,66 +101,7 @@
 <!-- Timeline -->
 <section class="max-w-3xl mx-auto mt-20 px-6">
   <h2 class="text-2xl font-semibold mb-10 text-center">Notable Events</h2>
-
-
-
-
-  <div class="relative border-l border-gray-700">
-
-
-    <a href="engineering/flux.html"
-      class="group block mb-10 ml-6 opacity-0 animate-fade-in [animation-delay:0.1s] transition-transform duration-300 hover:scale-[1.02]">
-      <div class="absolute w-3 h-3 bg-indigo-400 rounded-full -left-1.5 border border-slate-900"></div>
-      <div class="p-4 rounded-lg bg-slate-800/40 border border-slate-700 
-                  group-hover:border-indigo-400/60 transition-colors 
-                  flex justify-between gap-4">
-        <img src="../../assets/engassets/cup/spill.png"
-            alt="Project preview"
-            class="w-28 h-28 object-cover [object-position:28%_40%] rounded-md 
-                  border border-slate-700 group-hover:border-indigo-400/60 
-                  transition-colors" />
-        <div class="flex-1"> 
-          <h3 class="text-xl font-semibold">Flux Cup (Sophomore Lab Redesign)</h3>
-          <p class="text-sm text-gray-400 mb-2">February 2026</p>
-          <p class="text-gray-300 mb-1">
-            Reimagined dispoable polymer cup, improving usability and sustainability.
-          </p>
-          <span class="text-indigo-400 group-hover:text-indigo-300 text-sm">
-            View Project →
-          </span>
-        </div>
-      </div>
-    </a>
-
-    <a href="global/berlin.html"
-      class="group block mb-10 ml-6 opacity-0 animate-fade-in [animation-delay:0.25s] transition-transform duration-300 hover:scale-[1.02]">
-      <!-- Dot -->
-      <div class="absolute w-3 h-3 bg-emerald-400 rounded-full -left-1.5 border border-slate-900"></div>
-      <!-- Card -->
-      <div class="p-4 rounded-lg bg-slate-800/40 border border-slate-700 
-                  group-hover:border-emerald-400/60 transition-colors 
-                  flex justify-between gap-4">
-        <!-- Image Preview -->
-        <img src="../../assets/globalassets/berlin/b1.jpg"
-            alt="Project preview"
-            class="w-28 h-28 object-cover [object-position:28%_40%] rounded-md 
-                    border border-slate-700 group-hover:border-emerald-400/60 
-                    transition-colors" />
-        <!-- Text -->
-        <div class="flex-1">
-          <h3 class="text-xl font-semibold">Jazz in Germany</h3>
-          <p class="text-sm text-gray-400 mb-2">March 2025</p>
-          <p class="text-gray-300">
-            Priveleged to perform again overseas in Germany and Austria.
-          </p>
-          <span class="text-emerald-400 group-hover:text-emerald-300 text-sm">
-            View Project →
-          </span>
-        </div>
-      </div>
-    </a>
-
-  </div>
+  <div id="timeline" class="relative border-l border-gray-700"></div>
 </section>
 
 <!-- Fade-in animation -->
@@ -177,5 +120,72 @@
   <p>@ 2026 Evan Mullins</p>
 </footer>
 
+
+<!-- Timeline script -->
+<script>
+async function loadTimeline() {
+  const res = await fetch("projects.json");
+  const projects = await res.json();
+
+  // Sort newest → oldest
+  projects.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  const timeline = document.getElementById("timeline");
+
+  projects.forEach((p, i) => {
+    const delay = 0.1 + i * 0.15;
+
+    const colors = {
+      engineering: "indigo",
+      global: "emerald"
+    };
+
+    const color = colors[p.category] || "gray";
+
+    const item = `
+      <a href="${p.link}"
+         class="group block mb-10 ml-6 opacity-0 animate-fade-in [animation-delay:${delay}s] transition-transform duration-300 hover:scale-[1.02]">
+
+        <!-- Dot -->
+        <div class="absolute w-3 h-3 bg-${color}-400 rounded-full -left-1.5 border border-slate-900"></div>
+
+        <!-- Card -->
+        <div class="p-4 rounded-lg bg-slate-800/40 border border-slate-700
+                    group-hover:border-${color}-400/60 transition-colors
+                    flex justify-between gap-4">
+
+          <!-- Image -->
+          <img src="${p.image}"
+               alt="Project preview"
+               class="w-28 h-28 object-cover rounded-md border border-slate-700
+                      group-hover:border-${color}-400/60 transition-colors"
+               style="object-position: ${p.imagePosition};" />
+
+          <!-- Text -->
+          <div class="flex-1">
+            <h3 class="text-xl font-semibold">${p.title}</h3>
+            <p class="text-sm text-gray-400 mb-2">${p.dateDisplay}</p>
+            <p class="text-gray-300 mb-1">${p.description}</p>
+            <span class="text-${color}-400 group-hover:text-${color}-300 text-sm">
+              View Project →
+            </span>
+          </div>
+
+        </div>
+      </a>
+    `;
+
+    timeline.insertAdjacentHTML("beforeend", item);
+  });
+}
+
+loadTimeline();
+</script>
+
+
+
 </body>
+
+
+
 </html>
