@@ -1,4 +1,5 @@
-<!-- To run, CD dir then python -m http.server 8000, then http://localhost:8000/pages/projects/projects.html-->
+
+<!-- To run, CD dir then python -m http.server 8000, then http://localhost:8000/pages/projects/projects.html   -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -100,7 +101,7 @@
 
 <!-- Timeline -->
 <section class="max-w-3xl mx-auto mt-20 px-6">
-  <h2 class="text-2xl font-semibold mb-10 text-center">Notable Events</h2>
+  <h2 class="text-2xl font-semibold mb-10 text-center">Project Timeline:</h2>
   <div id="timeline" class="relative border-l border-gray-700"></div>
 </section>
 
@@ -142,12 +143,29 @@ async function loadTimeline() {
 
     const color = colors[p.category] || "gray";
 
+    if (p.type === "divider") {
+      const divider = `
+        <div class="ml-6 my-12 flex items-center gap-4 opacity-0 animate-fade-in [animation-delay:${delay}s]">
+          <div class="w-3 h-3 bg-slate-500 rounded-full border border-slate-900"></div>
+          <h2 class="text-lg font-semibold text-gray-300 tracking-wide uppercase">
+            ${p.label}
+          </h2>
+          <div class="flex-1 h-px bg-slate-700"></div>
+        </div>
+      `;
+      timeline.insertAdjacentHTML("beforeend", divider);
+      return; // Skip normal card rendering
+    }
+
+
     const item = `
       <a href="${p.link}"
          class="group block mb-10 ml-6 opacity-0 animate-fade-in [animation-delay:${delay}s] transition-transform duration-300 hover:scale-[1.02]">
 
         <!-- Dot -->
         <div class="absolute w-3 h-3 bg-${color}-400 rounded-full -left-1.5 border border-slate-900"></div>
+
+        
 
         <!-- Card -->
         <div class="p-4 rounded-lg bg-slate-800/40 border border-slate-700
@@ -158,12 +176,13 @@ async function loadTimeline() {
           <img src="${p.image}"
                alt="Project preview"
                class="w-28 h-28 object-cover rounded-md border border-slate-700
-                      group-hover:border-${color}-400/60 transition-colors"
+                      group-hover:border-${color}-400/60 transition-all duration-300 ${p.imageScale}"
                style="object-position: ${p.imagePosition};" />
 
           <!-- Text -->
           <div class="flex-1">
             <h3 class="text-xl font-semibold">${p.title}</h3>
+            <p class="text-sm text-gray-300 mb-1">${p.location}</p>
             <p class="text-sm text-gray-400 mb-2">${p.dateDisplay}</p>
             <p class="text-gray-300 mb-1">${p.description}</p>
             <span class="text-${color}-400 group-hover:text-${color}-300 text-sm">

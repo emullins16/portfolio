@@ -1,22 +1,132 @@
 [
   {
+  "type": "divider",
+  "label": "University of Florida",
+  "date": "2025-08-01"
+  },
+  {
+  "type": "divider",
+  "label": "St. Louis University High School",
+  "date": "2021-08-01"
+  },
+  {
     "title": "Flux Cup (Sophomore Lab Redesign)",
+    "location": "University of Florida",
     "date": "2026-02-01",
     "dateDisplay": "February 2026",
     "category": "engineering",
     "image": "../../assets/engassets/cup/spill.png",
     "imagePosition": "28% 40%",
+    "imageScale": "hover:scale-110",
     "description": "Reimagined disposable polymer cup, improving usability and sustainability.",
     "link": "engineering/flux.html"
   },
   {
-    "title": "Jazz in Germany",
+    "title": "Swarm Sense (NASA GeoEMERGE Challenge)",
+    "location": "University of Florida",
+    "date": "2026-1-30",
+    "dateDisplay": "January 2026",
+    "category": "engineering",
+    "image": "../../assets/engassets/nasa hack/logo.jpg",
+    "imagePosition": "30% 50%",
+    "imageScale": "hover:scale-110",
+    "description": "Analyzed rainfall measurements and field data to predict mosquito breeding grounds.",
+    "link": "engineering/swarm.html"
+  },
+  {
+    "title": "Canvas Pets (SwampHacks XI)",
+    "location": "University of Florida",
+    "date": "2026-01-17",
+    "dateDisplay": "January 2026",
+    "category": "engineering",
+    "image": "../../assets/engassets/swamphacks/logo.png",
+    "imagePosition": "35% 50%",
+    "imageScale": "hover:scale-110",
+    "description": "Created a Chrome extension to gameify assignment completion for K-8 students.",
+    "link": "engineering/swampxi.html"
+  },
+  {
+    "title": "Medlog (DTE Designathon 2025)",
+    "location": "University of Florida",
+    "date": "2025-11-08",
+    "dateDisplay": "November 2025",
+    "category": "engineering",
+    "image": "../../assets/engassets/dte25/browser.png",
+    "imagePosition": "35% 50%",
+    "imageScale": "hover:scale-110",
+    "description": "Built medical transcription & sharing platform in first hackathon.",
+    "link": "engineering/medlog.html"
+  },
+  {
+    "title": "Awards & Honors",
+    "location": "St. Louis University High School, Missouri",
+    "date": "2025-05-01",
+    "dateDisplay": "May 2025",
+    "category": "global",
+    "image": "../../assets/globalassets/mentor/3.jpg",
+    "imagePosition": "50% 40%",
+    "imageScale": "hover:scale-110",
+    "description": "Graduated as Jesuit Schools Network Ignatian Global Scholar, John Philip Sousa Award recipient, Spanish Seal of Biliteracy recipient, National Hispanic Recognition recipient, and AP Scholar with Distinction.",
+    "link": "global/honduras2.html"
+  },
+  {
+    "title": "Germany Band Trip",
+    "location": "Germany/Austria (Berlin, Salzburg, Munich, Lichtenstein)",
     "date": "2025-03-01",
     "dateDisplay": "March 2025",
     "category": "global",
     "image": "../../assets/globalassets/berlin/b1.jpg",
     "imagePosition": "28% 40%",
+    "imageScale": "hover:scale-110",
     "description": "Privileged to perform again overseas in Germany and Austria.",
     "link": "global/berlin.html"
+  },
+  {
+    "title": "San Yves Senior Service",
+    "location": "Yoro, Honduras",
+    "date": "2025-01-01",
+    "dateDisplay": "January 2025",
+    "category": "global",
+    "image": "../../assets/globalassets/hond2/h1.jpg",
+    "imagePosition": "28% 40%",
+    "imageScale": "hover:scale-110",
+    "description": "Completed Senior Service helping San Yves Centro de Nutricion.",
+    "link": "global/honduras2.html"
+  },
+  {
+    "title": "San Yves Junior Spring",
+    "location": "Yoro, Honduras",
+    "date": "2024-03-01",
+    "dateDisplay": "March 2024",
+    "category": "global",
+    "image": "../../assets/globalassets/hond1/h1.jpg",
+    "imagePosition": "28% 40%",
+    "imageScale": "hover:scale-110",
+    "description": "Pioneer group for rebooting tradition of Spring Service trip to Yoro, Honduras.",
+    "link": "global/honduras1.html"
+  },
+  {
+    "title": "Rome & Barcelona Band Trip (Italy/Spain)",
+    "location": "Italy/Spain (Rome, Barcelona)",
+    "date": "2023-03-01",
+    "dateDisplay": "March 2023",
+    "category": "global",
+    "image": "../../assets/globalassets/barcelona/b1.jpg",
+    "imagePosition": "28% 40%",
+    "imageScale": "hover:scale-110",
+    "description": "Performed in Rome and Barcelona with St. Louis University High School Jazz and Symphonic Band.",
+    "link": "global/rome.html"
+  },
+  {
+    "title": "Pamplona Study Abroad (Spain)",
+    "location": "Pamplona, Spain",
+    "date": "2022-06-01",
+    "dateDisplay": "June 2022",
+    "category": "global",
+    "image": "../../assets/globalassets/pamplona/p2.jpg",
+    "imagePosition": "28% 40%",
+    "imageScale": "hover:scale-110",
+    "description": "Spent summer with a wonderful host family in Pamplona, Spain through Colegio Iraba-Izaga.",
+    "link": "global/pamplona.html"
   }
 ]
